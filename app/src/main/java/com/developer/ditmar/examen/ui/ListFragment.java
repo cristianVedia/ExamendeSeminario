@@ -50,19 +50,19 @@ public class ListFragment extends Fragment {
         final ListView listView = root.findViewById(R.id.listview);
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<StructList> listdata = new ArrayList<>();
-        client.get(Utils.SERVICE, new JsonHttpResponseHandler(){
+        client.get(Utils.HOST+Utils.SERVICE, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
                         StructList item = new StructList();
                         item.setId(obj.getString("_id"));
-                        item.setDescription(obj.getString("description"));
-                        item.setDirections(obj.getString("directions"));
+                        item.setDescription(obj.getString("directions"));
+                        item.setDirections(obj.getString( "description"));
                         item.setDisclaimer(obj.getString("disclaimer"));
                         item.setLat(obj.getDouble("lat"));
                         item.setListPrice(obj.getDouble("listPrice"));
-                        item.setLng(obj.getDouble("listPrice"));
+                        item.setLng(obj.getDouble("lng"));
                         item.setPrimary_photo(obj.getString("primary_photo"));
                         listdata.add(item);
 

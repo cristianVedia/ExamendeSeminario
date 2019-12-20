@@ -56,8 +56,12 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
         return view;
     }
 
+
+
     @Override
     public void onClick(View view) {
+
+
 
     }
 }

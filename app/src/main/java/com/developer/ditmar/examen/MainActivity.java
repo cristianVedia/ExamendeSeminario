@@ -2,6 +2,8 @@ package com.developer.ditmar.examen;
 
 import android.os.Bundle;
 
+import com.developer.ditmar.examen.adapters.CustomAdapter;
+import com.developer.ditmar.examen.ui.DetailFragment;
 import com.developer.ditmar.examen.ui.RegisterFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,6 +18,8 @@ import android.view.ContextMenu;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.security.acl.LastOwnerException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,4 +77,5 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         return super.onOptionsItemSelected(item);
     }
+
 }
